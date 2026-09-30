@@ -1,14 +1,115 @@
+     
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=h1, initial-scale=1.0">
-    <title>Document</title>
-     <link rel="manifest" href="manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mantenimiento Agrícola</title>
+<link rel="manifest" href="manifest.json">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
 
+        .app {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #2d7d32;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .maquina {
+            background: #eeeeee;
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
+
 <body>
-    <h1> Ipet Nro. 411</h1>
-    
+
+<div class="app">
+
+    <h1>🚜 Mantenimiento</h1>
+
+    <h2>Agregar máquina</h2>
+
+    <input type="text" id="nombre" placeholder="Nombre de la máquina">
+
+    <select id="tipo">
+        <option value="Tractor">Tractor</option>
+        <option value="Cosechadora">Cosechadora</option>
+        <option value="Pulverizadora">Pulverizadora</option>
+        <option value="Otra">Otra</option>
+    </select>
+
+    <input type="number" id="horas" placeholder="Horas de uso">
+
+    <button onclick="agregarMaquina()">Agregar máquina</button>
+
+    <h2>Máquinas registradas</h2>
+
+    <div id="lista"></div>
+
+</div>
+
+<script>
+
+function agregarMaquina() {
+
+    let nombre = document.getElementById("nombre").value;
+    let tipo = document.getElementById("tipo").value;
+    let horas = document.getElementById("horas").value;
+
+    if (nombre === "" || horas === "") {
+        alert("Completá todos los campos");
+        return;
+    }
+
+    let maquina = document.createElement("div");
+
+    maquina.className = "maquina";
+
+    maquina.innerHTML = `
+        <strong>${nombre}</strong><br>
+        Tipo: ${tipo}<br>
+        Horas de uso: ${horas} h<br>
+        <button onclick="this.parentElement.remove()">
+            Eliminar
+        </button>
+    `;
+
+    document.getElementById("lista").appendChild(maquina);
+
+    document.getElementById("nombre").value = "";
+    document.getElementById("horas").value = "";
+}
+
+</script>
+
 </body>
 </html>
