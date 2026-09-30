@@ -1,6 +1,6 @@
 {
-  "name": "Hola Mundo",
-  "short_name": "Hola Mundo",
+  "name": "Agromatic",
+  "short_name": "Agromatic",
   "start_url": "/pagina1/",
   "display": "standalone",
   "background_color": "#ffffff",
