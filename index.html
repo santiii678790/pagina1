@@ -1,11 +1,13 @@
-     
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mantenimiento Agrícola</title>
-<link rel="manifest" href="manifest.json">
+
+    <title>AgroFix</title>
+
+    <link rel="manifest" href="manifest.json">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -22,8 +24,14 @@
             border-radius: 15px;
         }
 
-        h1 {
-            text-align: center;
+        .logo {
+            display: block;
+            width: 180px;
+            margin: 0 auto 15px auto;
+        }
+
+        h2 {
+            margin-top: 25px;
         }
 
         input, select, button {
@@ -41,6 +49,10 @@
             cursor: pointer;
         }
 
+        button:hover {
+            background: #246628;
+        }
+
         .maquina {
             background: #eeeeee;
             margin-top: 15px;
@@ -54,11 +66,16 @@
 
 <div class="app">
 
-    <h1>🚜 Mantenimiento</h1>
+    <!-- LOGOTIPO -->
+    <img src="agrofix-logo.png" alt="Logo AgroFix" class="logo">
 
     <h2>Agregar máquina</h2>
 
-    <input type="text" id="nombre" placeholder="Nombre de la máquina">
+    <input 
+        type="text" 
+        id="nombre" 
+        placeholder="Nombre de la máquina"
+    >
 
     <select id="tipo">
         <option value="Tractor">Tractor</option>
@@ -67,9 +84,15 @@
         <option value="Otra">Otra</option>
     </select>
 
-    <input type="number" id="horas" placeholder="Horas de uso">
+    <input 
+        type="number" 
+        id="horas" 
+        placeholder="Horas de uso"
+    >
 
-    <button onclick="agregarMaquina()">Agregar máquina</button>
+    <button onclick="agregarMaquina()">
+        Agregar máquina
+    </button>
 
     <h2>Máquinas registradas</h2>
 
@@ -98,6 +121,7 @@ function agregarMaquina() {
         <strong>${nombre}</strong><br>
         Tipo: ${tipo}<br>
         Horas de uso: ${horas} h<br>
+
         <button onclick="this.parentElement.remove()">
             Eliminar
         </button>
