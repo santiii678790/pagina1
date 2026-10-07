@@ -1,6 +1,6 @@
 {
-  "name": "Agromatic",
-  "short_name": "Agromatic",
+  "name": "AgroFix",
+  "short_name": "AgroFix",
   "start_url": "/pagina1/",
   "display": "standalone",
   "background_color": "#ffffff",
