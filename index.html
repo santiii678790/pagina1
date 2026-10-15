@@ -1,170 +1,131 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mantenimiento Agrícola</title>
-<link rel="manifest" href="manifest.json">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f2f2f2;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .app {
-            max-width: 400px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-        }
-
-        /* Estilos para el contenedor del logotipo centrado */
-        .logo-container {
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
-        .logo-container img {
-            max-width: 150px; /* Ajustá este ancho según el tamaño de tu logo */
-            height: auto;
-            display: inline-block;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        input, select, button {
-            width: 100%;
-            padding: 12px;
-            margin-top: 10px;
-            box-sizing: border-box;
-        }
-
-        button {
-            background: #2d7d32;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .maquina {
-            background: #eeeeee;
-            margin-top: 15px;
-            padding: 12px;
-            border-radius: 10px;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17271f">
+  <title>AgroFix | Mantenimiento de maquinaria</title>
+  <link rel="stylesheet" href="/css/app.css">
+  <script src="/js/app.js" defer></script>
 </head>
-
 <body>
+  <main class="auth-shell" id="auth-shell">
+    <section class="auth-story">
+      <a class="auth-brand" href="#inicio"><img src="/assets/icon-192.png" alt=""><span>AgroFix</span></a>
+      <div class="auth-copy"><span class="auth-kicker"><i></i> GESTIÓN AGRÍCOLA LOCAL</span><h1>El cuidado de tus equipos,<br><em>un paso adelante.</em></h1><p>Organizá la maquinaria, anticipá los servicios y llevá un historial claro de cada trabajo.</p><div class="auth-benefits"><span><b>01</b> Mantenimientos bajo control</span><span><b>02</b> Historial siempre disponible</span><span><b>03</b> Tus datos quedan en tu equipo</span></div></div>
+      <img class="auth-illustration" src="/assets/campo-agrofix.svg" alt="Ilustración de un tractor trabajando sobre líneas de cultivo">
+      <div class="auth-story-footer"><span>AGROFIX · MANTENIMIENTO INTELIGENTE</span><span>FUNCIONA SIN INTERNET</span></div>
+    </section>
+    <section class="auth-panel">
+      <div class="auth-mobile-brand"><img src="/assets/icon-192.png" alt=""><strong>AgroFix</strong></div>
+      <div class="auth-card">
+        <div class="eyebrow" id="auth-kicker">TU ESPACIO DE TRABAJO</div>
+        <h2 id="auth-title">Bienvenido de nuevo</h2>
+        <p class="auth-subtitle" id="auth-subtitle">Ingresá a tu cuenta para continuar con la gestión de tu maquinaria.</p>
+        <form class="auth-form" id="login-form" novalidate>
+          <label class="auth-field" for="login-email">Correo electrónico (Gmail)<input id="login-email" name="email" type="email" autocomplete="username" required maxlength="254" placeholder="nombre@gmail.com"></label>
+          <label class="auth-field" for="login-password">Contraseña<input id="login-password" name="password" type="password" autocomplete="current-password" required minlength="10" placeholder="Tu contraseña"><span class="auth-help">Mínimo 10 caracteres</span></label>
+          <div class="auth-error" id="login-error" role="alert"></div>
+          <button class="button button-primary auth-submit" type="submit">Iniciar sesión <span>→</span></button>
+        </form>
+        <form class="auth-form hidden" id="register-form" novalidate>
+          <div class="auth-name-row"><label class="auth-field" for="register-name">Nombre<input id="register-name" name="name" autocomplete="given-name" required minlength="2" maxlength="80" placeholder="Nombre"></label><label class="auth-field" for="register-surname">Apellido<input id="register-surname" name="surname" autocomplete="family-name" required minlength="2" maxlength="80" placeholder="Apellido"></label></div>
+          <label class="auth-field" for="register-phone">Número de teléfono<input id="register-phone" name="phone" type="tel" autocomplete="tel" required maxlength="24" placeholder="+54 9 11 1234 5678"></label>
+          <label class="auth-field" for="register-email">Correo electrónico (Gmail)<input id="register-email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="nombre@gmail.com"></label>
+          <label class="auth-field" for="register-password">Crear contraseña<input id="register-password" name="password" type="password" autocomplete="new-password" required minlength="10" maxlength="128" placeholder="Al menos 10 caracteres"><span class="auth-help">Usá una contraseña que no compartas con otros sitios.</span></label>
+          <label class="auth-field" for="register-confirm">Confirmar contraseña<input id="register-confirm" name="confirm" type="password" autocomplete="new-password" required minlength="10" maxlength="128" placeholder="Repetí tu contraseña"></label>
+          <div class="auth-error" id="register-error" role="alert"></div>
+          <button class="button button-primary auth-submit" type="submit">Crear cuenta local <span>→</span></button>
+        </form>
+        <div class="auth-divider"><span></span><small>ACCESO LOCAL Y PRIVADO</small><span></span></div>
+        <p class="auth-switch" id="auth-switch-login">¿Primera vez en AgroFix? <button type="button" data-auth-view="register">Crear una cuenta</button></p>
+        <p class="auth-switch hidden" id="auth-switch-register">¿Ya tenés una cuenta? <button type="button" data-auth-view="login">Iniciar sesión</button></p>
+        <p class="auth-privacy"><span>▣</span> Tu cuenta y tus datos se guardan en esta computadora.</p>
+      </div>
+      <div class="auth-panel-footer">AGROFIX <span>·</span> CONTROL DE MANTENIMIENTO</div>
+    </section>
+  </main>
 
-<div class="app">
+  <div class="app-shell hidden" id="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#panel" aria-label="AgroFix, ir al panel">
+        <img class="brand-image" src="/assets/icon-192.png" alt="">
+        <span><strong>agrofix</strong><small>GESTIÓN DE MANTENIMIENTO</small></span>
+      </a>
+      <div class="farm-label"><span class="online-dot"></span> SISTEMA LOCAL</div>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <span class="nav-caption">GESTIÓN</span>
+        <a href="#panel" class="nav-link active" data-view="panel"><span class="nav-icon">▦</span>Panel principal</a>
+        <a href="#maquinaria" class="nav-link" data-view="maquinaria"><span class="nav-icon">▤</span>Maquinaria</a>
+        <a href="#mantenimientos" class="nav-link" data-view="mantenimientos"><span class="nav-icon">◷</span>Mantenimientos</a>
+        <a href="#historial" class="nav-link" data-view="historial"><span class="nav-icon">↻</span>Historial</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="season-card"><span class="season-icon">✳</span><div><strong>Preparado para el campo</strong><small>Tu mantenimiento, bajo control.</small></div></div>
+        <div class="user-row"><div class="user-avatar" id="user-avatar">AG</div><div class="user-meta"><strong id="current-user-name">Operador</strong><small id="current-user-email">Equipo local</small></div><button class="user-menu" id="logout-button" type="button" title="Cerrar sesión" aria-label="Cerrar sesión">↪</button></div>
+      </div>
+    </aside>
 
-    <!-- Bloque del logotipo centrado -->
-    <div class="logo-container">
-        <img src="agrofix.png" alt="Logotipo Mantenimiento Agrícola">
-    </div>
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="menu-toggle" aria-label="Abrir navegación" aria-expanded="false">☰</button>
+        <div class="breadcrumbs"><span>AgroFix</span><span class="crumb-sep">/</span><strong id="breadcrumb-current">Panel principal</strong></div>
+        <div class="topbar-right"><span class="local-status"><i></i> Datos guardados localmente</span><span class="date-label" id="today-label"></span></div>
+      </header>
 
-    <h1>🚜 Mantenimiento</h1>
+      <div class="page-content">
+        <section class="view-section active" id="view-panel" aria-labelledby="page-title">
+          <div class="page-heading">
+            <div><div class="eyebrow">CENTRO DE OPERACIONES</div><h1 id="page-title">Panel principal</h1><p class="page-subtitle">Resumen del estado de tu maquinaria y sus próximos servicios.</p></div>
+            <button class="button button-primary" data-action="new-maintenance"><span>＋</span> Programar mantenimiento</button>
+          </div>
+          <div class="metrics-grid" id="dashboard-metrics">
+            <article class="metric-card"><div class="metric-top"><span>Máquinas registradas</span><span class="metric-icon green">▤</span></div><strong class="metric-value" data-metric="machines">—</strong><small class="metric-foot">En tu inventario</small></article>
+            <article class="metric-card"><div class="metric-top"><span>Próximos servicios</span><span class="metric-icon amber">◷</span></div><strong class="metric-value" data-metric="upcoming">—</strong><small class="metric-foot">Requieren planificación</small></article>
+            <article class="metric-card"><div class="metric-top"><span>Pendientes o vencidos</span><span class="metric-icon red">!</span></div><strong class="metric-value" data-metric="overdue">—</strong><small class="metric-foot">Revisar tareas abiertas</small></article>
+            <article class="metric-card"><div class="metric-top"><span>Servicios registrados</span><span class="metric-icon blue">↻</span></div><strong class="metric-value" data-metric="completed">—</strong><small class="metric-foot">En el historial</small></article>
+          </div>
+          <div class="dashboard-grid">
+            <section class="panel-card alerts-panel"><div class="panel-heading"><div><div class="eyebrow">SEGUIMIENTO</div><h2>Alertas de mantenimiento</h2></div><a class="text-link" href="#mantenimientos">Ver mantenimientos <span>→</span></a></div><div id="dashboard-alerts" class="empty-state compact"><span class="empty-icon">✓</span><strong>Todo despejado</strong><p>Las alertas aparecerán aquí cuando registres mantenimientos.</p></div></section>
+            <section class="panel-card activity-panel"><div class="panel-heading"><div><div class="eyebrow">ÚLTIMOS MOVIMIENTOS</div><h2>Actividad reciente</h2></div><a class="text-link" href="#historial">Ver historial <span>→</span></a></div><div id="dashboard-activity" class="empty-state compact"><span class="empty-icon">↻</span><strong>Sin actividad todavía</strong><p>Los trabajos completados quedarán registrados en este espacio.</p></div></section>
+          </div>
+          <section class="panel-card quick-panel"><div class="panel-heading"><div><div class="eyebrow">ACCESOS DIRECTOS</div><h2>¿Qué necesitás hacer?</h2></div></div><div class="quick-actions"><button class="quick-action" data-view-link="maquinaria"><span class="quick-icon green">＋</span><span><strong>Registrar maquinaria</strong><small>Sumá un equipo al inventario</small></span><b>→</b></button><button class="quick-action" data-action="new-maintenance"><span class="quick-icon amber">◷</span><span><strong>Programar un servicio</strong><small>Organizá el próximo mantenimiento</small></span><b>→</b></button><button class="quick-action" data-view-link="historial"><span class="quick-icon blue">↻</span><span><strong>Consultar historial</strong><small>Revisá los trabajos realizados</small></span><b>→</b></button></div></section>
+        </section>
 
-    <h3>Agregar máquina</h3>
+        <section class="view-section" id="view-maquinaria" aria-labelledby="machines-title">
+          <div class="page-heading"><div><div class="eyebrow">INVENTARIO</div><h1 id="machines-title">Maquinaria</h1><p class="page-subtitle">Administrá los equipos y consultá su estado de mantenimiento.</p></div><button class="button button-primary" data-action="new-machine"><span>＋</span> Registrar máquina</button></div>
+          <section class="panel-card list-panel"><div class="list-toolbar"><label class="search-box"><span>⌕</span><input id="machine-search" type="search" placeholder="Buscar por marca, modelo o identificación…" aria-label="Buscar maquinaria"></label><label class="filter-select"><span class="sr-only">Filtrar por tipo</span><select id="machine-filter"><option value="">Todos los tipos</option><option>Tractor</option><option>Cosechadora</option><option>Pulverizadora</option><option>Sembradora</option><option>Otro</option></select></label></div><div class="table-wrap"><table><thead><tr><th>EQUIPO</th><th>TIPO</th><th>IDENTIFICACIÓN</th><th>AÑO</th><th>HORAS</th><th>ESTADO</th><th><span class="sr-only">Acciones</span></th></tr></thead><tbody id="machine-rows"></tbody></table><div class="empty-state table-empty" id="machines-empty"><span class="empty-icon">▤</span><strong>Tu inventario empieza acá</strong><p>Registrá tu primera máquina para organizar sus mantenimientos.</p><button class="button button-secondary" data-action="new-machine">＋ Registrar primera máquina</button></div></div></section>
+        </section>
 
-    <input type="text" id="nombre" placeholder="Nombre de la máquina">
+        <section class="view-section" id="view-maquina-detalle" aria-labelledby="machine-profile-title">
+          <div class="detail-back-row"><button class="back-link" data-view-link="maquinaria">← Volver a maquinaria</button></div>
+          <div class="machine-profile-card panel-card"><div class="machine-profile-art"><img id="machine-profile-image" src="/assets/tractor.svg" alt="Ilustración de maquinaria agrícola"></div><div class="machine-profile-copy"><div class="eyebrow">FICHA DE MAQUINARIA</div><span class="type-chip" id="machine-profile-type">Equipo</span><h1 id="machine-profile-title">Máquina</h1><p id="machine-profile-subtitle" class="page-subtitle">Información técnica y mantenimiento asociado.</p><div class="profile-actions"><button class="button button-secondary" data-action="edit-selected-machine">✎ Editar equipo</button><button class="button button-primary" data-action="new-maintenance"><span>＋</span> Programar servicio</button></div></div></div>
+          <div class="machine-spec-grid" id="machine-profile-specs"></div>
+          <div class="dashboard-grid profile-lower-grid"><section class="panel-card"><div class="panel-heading"><div><div class="eyebrow">PLANIFICACIÓN</div><h2>Próximos mantenimientos</h2></div><button class="text-link" data-action="new-maintenance">Programar <span>＋</span></button></div><div class="profile-record-list" id="machine-profile-maintenance"></div></section><section class="panel-card"><div class="panel-heading"><div><div class="eyebrow">TRABAJOS REALIZADOS</div><h2>Historial del equipo</h2></div><button class="text-link" data-view-link="historial">Ver historial <span>→</span></button></div><div class="profile-record-list" id="machine-profile-history"></div></section></div>
+        </section>
 
-    <select id="tipo">
-        <option value="Tractor">Tractor</option>
-        <option value="Cosechadora">Cosechadora</option>
-        <option value="Pulverizadora">Pulverizadora</option>
-        <option value="Otra">Otra</option>
-    </select>
+        <section class="view-section" id="view-mantenimientos" aria-labelledby="maintenance-title">
+          <div class="page-heading"><div><div class="eyebrow">PLANIFICACIÓN</div><h1 id="maintenance-title">Mantenimientos</h1><p class="page-subtitle">Planificá servicios por fecha o por horas de funcionamiento.</p></div><button class="button button-primary" data-action="new-maintenance"><span>＋</span> Programar mantenimiento</button></div>
+          <section class="panel-card list-panel"><div class="list-toolbar"><div class="tabs" role="tablist" aria-label="Filtrar mantenimientos"><button class="tab active" data-maintenance-filter="all" role="tab" aria-selected="true">Todos</button><button class="tab" data-maintenance-filter="upcoming" role="tab" aria-selected="false">Próximos</button><button class="tab" data-maintenance-filter="overdue" role="tab" aria-selected="false">Pendientes o vencidos</button></div><label class="filter-select"><span class="sr-only">Filtrar por estado</span><select id="maintenance-machine-filter"><option value="">Todas las máquinas</option></select></label></div><div id="maintenance-list" class="maintenance-list"></div><div class="empty-state" id="maintenance-empty"><span class="empty-icon">◷</span><strong>No hay mantenimientos programados</strong><p>Creá una tarea para empezar a organizar los servicios de tus máquinas.</p><button class="button button-secondary" data-action="new-maintenance">＋ Programar mantenimiento</button></div></section>
+        </section>
 
-    <input type="number" id="horas" placeholder="Horas de uso">
+        <section class="view-section" id="view-tarea-detalle" aria-labelledby="maintenance-profile-title">
+          <div class="detail-back-row"><button class="back-link" data-view-link="mantenimientos">← Volver a mantenimientos</button></div>
+          <section class="panel-card maintenance-profile-card"><div class="maintenance-profile-icon"><img id="task-profile-image" src="/assets/maquinaria.svg" alt=""></div><div class="maintenance-profile-main"><div class="eyebrow">DETALLE DEL MANTENIMIENTO</div><span class="status-pill status-pending" id="task-profile-status">Pendiente</span><h1 id="maintenance-profile-title">Servicio</h1><button class="text-link" id="task-machine-link" data-machine-action="detail" data-id="">Ver ficha de máquina →</button></div><div class="maintenance-profile-action"><button class="button button-primary" id="task-complete-button">✓ Registrar trabajo realizado</button></div></section>
+          <div class="machine-spec-grid" id="task-profile-specs"></div><section class="panel-card task-notes-panel"><div class="eyebrow">OBSERVACIONES</div><p id="task-profile-notes">Sin observaciones registradas.</p></section>
+        </section>
 
-    <button onclick="agregarMaquina()">Agregar máquina</button>
+        <section class="view-section" id="view-historial" aria-labelledby="history-title">
+          <div class="page-heading"><div><div class="eyebrow">REGISTRO DE SERVICIOS</div><h1 id="history-title">Historial</h1><p class="page-subtitle">Consultá los trabajos realizados y los datos registrados en cada servicio.</p></div></div>
+          <section class="panel-card list-panel"><div class="list-toolbar"><label class="search-box"><span>⌕</span><input id="history-search" type="search" placeholder="Buscar por máquina o trabajo…" aria-label="Buscar en historial"></label><label class="filter-select"><span class="sr-only">Filtrar historial por máquina</span><select id="history-machine-filter"><option value="">Todas las máquinas</option></select></label></div><div id="history-list" class="history-list"></div><div class="empty-state" id="history-empty"><span class="empty-icon">↻</span><strong>El historial está vacío</strong><p>Al completar un mantenimiento, el trabajo realizado quedará guardado acá.</p></div></section>
+        </section>
+        <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+      </div>
+    </main>
+  </div>
 
-    <h2>Máquinas registradas</h2>
-
-    <div id="lista"></div>
-
-</div>
-
-<script>
-// 1. Cargamos las máquinas guardadas al iniciar la app. Si no hay ninguna, empezamos con un array vacío.
-let maquinas = JSON.parse(localStorage.getItem("agrofix_maquinas")) || [];
-
-// 2. Ejecutamos la función para mostrar las máquinas guardadas apenas cargue la página
-document.addEventListener("DOMContentLoaded", mostrarMaquinas);
-
-function agregarMaquina() {
-    let nombre = document.getElementById("nombre").value;
-    let tipo = document.getElementById("tipo").value;
-    let horas = document.getElementById("horas").value;
-
-    if (nombre === "" || horas === "") {
-        alert("Completá todos los campos");
-        return;
-    }
-
-    // 3. Creamos un objeto para la nueva máquina con un ID único usando la fecha actual en milisegundos
-    let nuevaMaquina = {
-        id: Date.now(),
-        nombre: nombre,
-        tipo: tipo,
-        horas: horas
-    };
-
-    // 4. Agregamos el objeto al array global
-    maquinas.push(nuevaMaquina);
-
-    // 5. Guardamos la lista actualizada en el localStorage del navegador
-    localStorage.setItem("agrofix_maquinas", JSON.stringify(maquinas));
-
-    // 6. Volvemos a dibujar la lista en pantalla y limpiamos el formulario
-    mostrarMaquinas();
-
-    document.getElementById("nombre").value = "";
-    document.getElementById("horas").value = "";
-}
-
-// 7. Nueva función encargada exclusivamente de dibujar las máquinas en el HTML
-function mostrarMaquinas() {
-    let listaContenedor = document.getElementById("lista");
-    listaContenedor.innerHTML = ""; // Limpiamos la pantalla antes de redibujar
-
-    maquinas.forEach(maquina => {
-        let divMaquina = document.createElement("div");
-        divMaquina.className = "maquina";
-        
-        // El botón eliminar ahora llama a la función eliminarMaquina usando el ID único
-        divMaquina.innerHTML = `
-            <strong>${maquina.nombre}</strong><br>
-            Tipo: ${maquina.tipo}<br>
-            Horas de uso: ${maquina.horas} h<br>
-            <button onclick="eliminarMaquina(${maquina.id})">
-                Eliminar
-            </button>
-        `;
-        listaContenedor.appendChild(divMaquina);
-    });
-}
-
-// 8. Nueva función para borrar la máquina de la memoria
-function eliminarMaquina(id) {
-    // Filtramos la lista para conservar todas las máquinas menos la que coincida con el ID seleccionado
-    maquinas = maquinas.filter(maquina => maquina.id !== id);
-
-    // Actualizamos el localStorage con la nueva lista filtrada
-    localStorage.setItem("agrofix_maquinas", JSON.stringify(maquinas));
-
-    // Volvemos a renderizar en pantalla
-    mostrarMaquinas();
-}
-</script>
-
+  <dialog class="form-dialog" id="form-dialog" aria-labelledby="dialog-title"><form id="entity-form" method="dialog" novalidate><div class="dialog-heading"><div><div class="eyebrow" id="dialog-eyebrow">NUEVO REGISTRO</div><h2 id="dialog-title">Registrar máquina</h2></div><button class="icon-button" type="button" data-close-dialog aria-label="Cerrar">×</button></div><div class="dialog-fields" id="dialog-fields"></div><div class="dialog-error" id="dialog-error" role="alert"></div><div class="dialog-actions"><button class="button button-secondary" type="button" data-close-dialog>Cancelar</button><button class="button button-primary" type="submit" id="dialog-submit">Guardar registro</button></div></form></dialog>
+  <dialog class="confirm-dialog" id="confirm-dialog" aria-labelledby="confirm-title"><form method="dialog"><div class="dialog-heading"><div><div class="eyebrow">CONFIRMAR ACCIÓN</div><h2 id="confirm-title">Eliminar máquina</h2></div></div><p id="confirm-message">¿Querés eliminar este registro?</p><div class="dialog-actions"><button class="button button-secondary" value="cancel">Cancelar</button><button class="button button-danger" value="confirm">Eliminar</button></div></form></dialog>
+  <dialog class="detail-dialog" id="detail-dialog" aria-labelledby="detail-title"><div class="detail-content"><div class="dialog-heading"><div><div class="eyebrow">FICHA DE EQUIPO</div><h2 id="detail-title">Máquina</h2></div><button class="icon-button" type="button" data-close-detail aria-label="Cerrar">×</button></div><div id="machine-detail-body"></div><div class="dialog-actions"><button class="button button-secondary" type="button" data-close-detail>Cerrar</button></div></div></dialog>
 </body>
 </html>
